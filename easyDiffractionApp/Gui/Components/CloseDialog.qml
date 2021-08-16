@@ -24,13 +24,17 @@ EaElements.Dialog {
             text: qsTr("Save and exit")
             onClicked: {
                 ExGlobals.Constants.proxy.project.saveProject()
+                ExGlobals.Constants.proxy.project.onExit()
                 window.quit()
             }
         }
 
         EaElements.Button {
             text: qsTr("Exit without saving")
-            onClicked: window.quit()
+            onClicked: {
+                ExGlobals.Constants.proxy.project.onExit()
+                window.quit()
+            }
         }
     }
 }

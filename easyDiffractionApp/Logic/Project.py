@@ -177,7 +177,7 @@ class ProjectLogic(QObject):
         self.parent.l_sample._sample = Sample.from_dict(descr['sample'])
         self.parent.l_phase.phases = self.parent.l_sample._sample._phases
         self.parent.l_sample._sample.interface = self._interface
-        self.parent.l_phase.phases.phasesAsObjChanged.emit()
+        self.parent.l_phase.phasesAsObjChanged.emit()
 
         # send signal to tell the proxy we changed phases
         self.phasesEnabled.emit()
@@ -277,6 +277,13 @@ class ProjectLogic(QObject):
             self._project_info[key_value[0]] = key_value[1]
             self.projectInfoChanged.emit()
 
+    def onExit(self):
+        """
+        Things to do before the app shuts down
+        """
+        # close interface processes
+        # currently works only with cryspy
+        self._interface.current_interface.stop()
 
 def createFile(path, content):
     if os.path.exists(path):

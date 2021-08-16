@@ -108,6 +108,10 @@ class ProjectProxy(QObject):
     def _onStateChanged(self, changed=True):
         self.logic.stateHasChanged(changed)
 
+    @Slot()
+    def onExit(self):
+        self.logic.onExit()
+
     @Slot(str)
     def setReport(self, report):
         """
