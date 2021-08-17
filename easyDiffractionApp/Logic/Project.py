@@ -283,7 +283,8 @@ class ProjectLogic(QObject):
         """
         # close interface processes
         # currently works only with cryspy
-        self._interface.current_interface.stop()
+        self._interface.stop()
+
 
 def createFile(path, content):
     if os.path.exists(path):
