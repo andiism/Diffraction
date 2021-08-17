@@ -422,6 +422,7 @@ EaComponents.ApplicationWindow {
        close.accepted = !ExGlobals.Constants.proxy.project.stateHasChanged
        if (close.accepted) {
            close.accepted = false
+           ExGlobals.Constants.proxy.project.onExit()
            window.quit()
        }
     }
