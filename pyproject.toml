@@ -28,8 +28,8 @@ darkdetect = '^0.3.1'
 pyobjc-core = { version = '^7.1', platform = 'darwin' }
 pyobjc-framework-cocoa = { version = '^7.1', platform = 'darwin' }
 # easyScience
-easyDiffractionLib = { git = 'https://github.com/easyScience/easyDiffractionLib.git', rev = 'TOF' }
-easyApp = { git = 'https://github.com/easyScience/easyApp.git', rev = 'subproxies' }
+easyDiffractionLib = { git = 'https://github.com/easyScience/easyDiffractionLib.git', rev = 'cryspy_mp' }
+easyApp = { git = 'https://github.com/easyScience/easyApp.git', rev = 'develop' }
 
 #[tool.poetry.dev-dependencies]
 # PyInstaller
